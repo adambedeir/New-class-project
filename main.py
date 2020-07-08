@@ -1,9 +1,9 @@
 import random
+rand=random.randint(0,10)
 tries=5
 Win = False
 Play = True
 while Play == True :
-  rand=random.randint(0,10)
   if tries>0:
     guess=input('pick a number between 0 and 10 \n')
     guess=int(guess)
@@ -19,10 +19,13 @@ while Play == True :
         tries=tries-1
       elif guess<rand:
         smaller= rand- guess
-        print('you are'+str(smaller) + ' ' +'off the correct answer')
+        print('you are'+ ' ' + str(smaller) + ' ' +'off the correct answer')
         tries=tries-1
       else:
         print( 'you got the number right')
-  else:
+        answer= input('do you wnat to play again? Y/N')
+        if answer== 'Y':
+  else tries:
     print( 'no more turns')
+    print( 'the number was' + ' ' +str(rand))
     Play=False
